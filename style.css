@@ -4,7 +4,7 @@
     left: 35%;
     background: transparent;
     background: rgba(224, 147, 160, 0.5);
-    width: 500px;
+    width: 800px;
     justify-content: center;
 }
 .h1s{
@@ -92,6 +92,7 @@ body{
 #p_health{
   font-family: 'Comic Sans Ms';
   font-size: 20px;
+  height: 150px;
 }
 #screamer {
   width: 100vw;
@@ -182,6 +183,7 @@ section{
 #intsca{
   width: 450px;
   height: 300px;
+  left: 20%;
   position: relative;
 }
 #test{
@@ -208,10 +210,11 @@ section{
 .vitamins {
   border: #999999 1px solid;
   box-shadow: 10px 10px #c4c4c4;
-  padding: 10px;
-  width: 150px;
-  height: 200px;
+  padding: 20px;
+  width: 45%;
+  height: 400px;
   background-color: #00e1ff;
+  gap: 20px;
 }
 .idi{
   position: absolute;
@@ -221,4 +224,8 @@ section{
 }
 #buytwo{
   left: 70px;
+}
+.vitaminsimg{
+   width: 100px;
+   height: 100px;
 }

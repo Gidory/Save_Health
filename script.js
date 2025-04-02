@@ -165,26 +165,29 @@ const arrayOfVitaminObjects = [
 {
     "id": "1",
     "title": "Vitamin B",
-    "photo": "",
-    "description": "",
+    "photo": "vitamin.png",
+    "description": "Потужний антиоксидант, зміцнює імунітет, підтримує шкіру та судини, сприяє засвоєнню заліза.",
     "rating": "",
-    "useful": ""
+    "useful": "",
+    'type':"I don`t know"
 },
 {
     "id": "2",
     "title": "Omega D3",
-    "photo": "",
+    "photo": "vitaminy.png",
     "description": "",
     "rating": "",
-    "useful": ""
+    "useful": "",
+    'type':"I don`t know"
 },
 {
     "id": "3",
     "title": "Vitamin C",
-    "photo": "",
+    "photo": "vitamin-c.png",
     "description": "",
     "rating": "",
-    "useful": ""
+    "useful": "",
+    'type':"I don`t know"
 }
 ];
 let VitamineImages = ["vitamin.png"];
@@ -192,8 +195,26 @@ arrayOfVitaminObjects.forEach((item) => {
     console.log(item);
     let divVitamin = document.createElement("div");
     divVitamin.classList.add('vitamins');
-    divVitamin.innerText = item.title;
-    let image = document.createElement("img");
-    image.src = "vitamin.png";
+    divVitamin.innerHTML = `
+    <p>${item.id}</p>
+    <h3>${item.title}<h3>
+    <hr>
+    <img class="vitaminsimg" src="${item.photo}" alt="">
+    <p>${item.description}<p>
+    <div>
+    <p>${'💚'.repeat(item.rating) + '♡'.repeat(5-item.rating)}</p>
+    <p>${item.type}</p>
+    </div>
+    `
+
     document.getElementById('p-vitamins').appendChild(divVitamin);
+    // divVitamin.innerText = item.title;
+    // let image = document.createElement("img");
+    // image.src = item.photo;
+    // image.classList.add('vitaminsimg');
+    // divVitamin.appendChild(image);
+    // let pdesc = document.createElement("p");
+    // pdesc.innerText=item.description;
+    // divVitamin.appendChild(pdesc);
+
 });
