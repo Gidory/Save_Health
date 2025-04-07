@@ -1,7 +1,7 @@
 .sectstyle{
     text-align: center;
     position: absolute;
-    left: 35%;
+    left: 28%;
     background: transparent;
     background: rgba(224, 147, 160, 0.5);
     width: 800px;
@@ -151,7 +151,7 @@ section{
   position: absolute;
   background-image: url(giphy.gif);
   top: 1100px;
-  left: 1100px;
+  left: 70%;
   display: none;
 }
 .images{
@@ -212,9 +212,11 @@ section{
   box-shadow: 10px 10px #c4c4c4;
   padding: 20px;
   width: 45%;
-  height: 400px;
+  height: 450px;
   background-color: #00e1ff;
   gap: 20px;
+  transition: all;
+  transition-duration: 1s;
 }
 .idi{
   position: absolute;
@@ -228,4 +230,7 @@ section{
 .vitaminsimg{
    width: 100px;
    height: 100px;
+}
+.vitamins:hover{
+  transform: scale(1.1);
 }

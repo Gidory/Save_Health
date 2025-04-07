@@ -161,37 +161,38 @@ function followAndZoom(object, zoomLevel) {
     // Видаляємо масштабування body, щоб не ламати position: fixed
     document.body.style.transform = ""; 
 }
-const arrayOfVitaminObjects = [
-{
-    "id": "1",
-    "title": "Vitamin B",
-    "photo": "vitamin.png",
-    "description": "Потужний антиоксидант, зміцнює імунітет, підтримує шкіру та судини, сприяє засвоєнню заліза.",
-    "rating": "",
-    "useful": "",
-    'type':"I don`t know"
-},
-{
-    "id": "2",
-    "title": "Omega D3",
-    "photo": "vitaminy.png",
-    "description": "",
-    "rating": "",
-    "useful": "",
-    'type':"I don`t know"
-},
-{
-    "id": "3",
-    "title": "Vitamin C",
-    "photo": "vitamin-c.png",
-    "description": "",
-    "rating": "",
-    "useful": "",
-    'type':"I don`t know"
-}
-];
-let VitamineImages = ["vitamin.png"];
+const arrayOfVitaminObjects = [];
+ fetch('js/objects.json')
+.then(response => response.json())
+.then(data => {
+    data.forEach((item)=>{
+        
+    console.log(item);
+    let divVitamin = document.createElement("div");
+    divVitamin.classList.add('vitamins');
+    divVitamin.innerHTML = `
+    <p>${item.id}</p>
+    <h3>${item.title}<h3>
+    <hr>
+    <img class="vitaminsimg" src="${item.photo}" alt="">
+    <p>${item.description}<p>
+    <div>
+    <p>${'💚'.repeat(item.rating) + '♡'.repeat(5-item.rating)}</p>
+    <p>${item.type}</p>
+    </div>
+    `
+
+    document.getElementById('p-vitamins').appendChild(divVitamin);
+    })
+})
+.catch(error => console.error('Something broke:', error))
+//let aovo = JSON.stringify(arrayOfVitaminObjects);;
+
+//console.log(arrayOfVitaminObjects);
+
+arrayOfVitaminObjects.forEach(item=>console.log(item))
 arrayOfVitaminObjects.forEach((item) => {
+    
     console.log(item);
     let divVitamin = document.createElement("div");
     divVitamin.classList.add('vitamins');
@@ -218,3 +219,15 @@ arrayOfVitaminObjects.forEach((item) => {
     // divVitamin.appendChild(pdesc);
 
 });
+// const fs = require('fs');
+
+// fs.readFile('./data/info.json', 'utf8', (err, jsonString) => {
+//   if (err) {
+//     console.error("File read failed:", err);
+//     return;
+//   }
+//   const data = JSON.parse(jsonString);
+
+//   console.log(data.name);         // "Alice"
+//   console.log(data.skills.length); // 3
+// });
