@@ -165,18 +165,18 @@ const arrayOfVitaminObjects = [];
  fetch('js/objects.json')
 .then(response => response.json())
 .then(data => {
-    data.forEach((item)=>{
+    data.Vitamins.forEach((item)=>{
         
     console.log(item);
     let divVitamin = document.createElement("div");
     divVitamin.classList.add('vitamins');
     divVitamin.innerHTML = `
     <p>${item.id}</p>
-    <h3>${item.title}<h3>
+    <h3 id="ggg" >${item.title}<h3>
     <hr>
     <img class="vitaminsimg" src="${item.photo}" alt="">
+    <div id="imp77">
     <p>${item.description}<p>
-    <div>
     <p>${'💚'.repeat(item.rating) + '♡'.repeat(5-item.rating)}</p>
     <p>${item.type}</p>
     </div>
@@ -201,12 +201,18 @@ arrayOfVitaminObjects.forEach((item) => {
     <h3>${item.title}<h3>
     <hr>
     <img class="vitaminsimg" src="${item.photo}" alt="">
-    <p>${item.description}<p>
     <div>
+    <p id="imp">${item.description}<p>
     <p>${'💚'.repeat(item.rating) + '♡'.repeat(5-item.rating)}</p>
     <p>${item.type}</p>
     </div>
     `
+    Vitamins.p.addEventListener("mouseover", function(){
+        p.style.opacity = 1;
+    });
+    Vitamins.p.addEventListener("mouseout", function(){
+        p.style.opacity = 0;
+    });
 
     document.getElementById('p-vitamins').appendChild(divVitamin);
     // divVitamin.innerText = item.title;

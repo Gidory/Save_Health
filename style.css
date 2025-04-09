@@ -234,3 +234,27 @@ section{
 .vitamins:hover{
   transform: scale(1.1);
 }
+.vitamins:hover #ggg{
+  color: blue;
+}
+.vitamins img{
+  transition-duration: 1s;
+}
+.vitamins div{
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+.vitamins div:hover{
+  opacity: 1;
+}
+#imp77{
+  opacity: 0;
+  transition-duration: 1s;
+}
+#imp77:hover{
+  opacity: 1;
+}
+.vitamins img:hover{
+  scale: 1.2;
+  rotate: 25deg;
+}
